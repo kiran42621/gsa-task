@@ -1,6 +1,6 @@
-##Get Started
+## Get Started
 
-Step 1: Clone to local machine
+Step 1: Clone to local machine \n
 Step 2: Create python virtual env
 Step 3: activate virtual env
 Step 4: enter command "pip install -r requirements.txt"
