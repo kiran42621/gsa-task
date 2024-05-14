@@ -1,0 +1,43 @@
+<div class="modal" tabindex="-1" id="addtaskmodal">
+    <form action="/user/addtask" method="post">
+        {% csrf_token %}
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+          <div class="container">
+            <div class="row mb-3">
+                <div class="col-auto">
+                    <label for="name" class="form-label">Title</label>
+                </div>
+                <div class="col-auto">
+                    <input type="text" name="name" id="name" class="form-control" required >
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-auto">
+                    <label for="name" class="form-label">Assign to</label>
+                </div>
+                <div class="col-auto">
+                    <select name="assigned_user" id="" class="form-select" >
+                        <option value="Select">Select</option>
+                        {% for row in userlist %}
+                        <option value="{{ row.email }}">{{ row.email }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">Add Task</button>
+        </div>
+      </div>
+    </div>
+</form>
+  </div>

@@ -1,0 +1,29 @@
+{% extends 'userbase.html' %}
+{% block body %}
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Assigned To</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in task %}
+                <tr>
+                    <td>{{ row.id }}</td>
+                    <td>{{ row.title }}</td>
+                    <td>{{ row.datetime|date:'d-M-Y' }}</td>
+                    <td>{{ row.datetime|time:'G:i:s' }}</td>
+                    <td>{{ row.assigned_to.email }}</td>
+                    <td>{{ row.status }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
